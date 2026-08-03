@@ -26,7 +26,8 @@ export const Route = createFileRoute("/blog")({
 });
 
 function BlogPage() {
-  const [featured, ...rest] = blogPosts;
+  const featured = blogPosts[0]!;
+  const rest = blogPosts.slice(1);
   return (
     <SiteLayout>
       <PageHero

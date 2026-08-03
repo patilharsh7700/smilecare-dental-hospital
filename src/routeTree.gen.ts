@@ -11,7 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AppointmentRouteImport } from './routes/appointment'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DoctorsRouteImport } from './routes/doctors'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as TreatmentsRouteImport } from './routes/treatments'
 
 const IndexRoute = IndexRouteImport.update({
@@ -24,9 +30,39 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppointmentRoute = AppointmentRouteImport.update({
+  id: '/appointment',
+  path: '/appointment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DoctorsRoute = DoctorsRouteImport.update({
   id: '/doctors',
   path: '/doctors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TestimonialsRoute = TestimonialsRouteImport.update({
+  id: '/testimonials',
+  path: '/testimonials',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TreatmentsRoute = TreatmentsRouteImport.update({
@@ -38,34 +74,89 @@ const TreatmentsRoute = TreatmentsRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/appointment': typeof AppointmentRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
   '/doctors': typeof DoctorsRoute
+  '/gallery': typeof GalleryRoute
+  '/pricing': typeof PricingRoute
+  '/testimonials': typeof TestimonialsRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/appointment': typeof AppointmentRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
   '/doctors': typeof DoctorsRoute
+  '/gallery': typeof GalleryRoute
+  '/pricing': typeof PricingRoute
+  '/testimonials': typeof TestimonialsRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/appointment': typeof AppointmentRoute
+  '/blog': typeof BlogRoute
+  '/contact': typeof ContactRoute
   '/doctors': typeof DoctorsRoute
+  '/gallery': typeof GalleryRoute
+  '/pricing': typeof PricingRoute
+  '/testimonials': typeof TestimonialsRoute
   '/treatments': typeof TreatmentsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/doctors' | '/treatments'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/appointment'
+    | '/blog'
+    | '/contact'
+    | '/doctors'
+    | '/gallery'
+    | '/pricing'
+    | '/testimonials'
+    | '/treatments'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/doctors' | '/treatments'
-  id: '__root__' | '/' | '/about' | '/doctors' | '/treatments'
+  to:
+    | '/'
+    | '/about'
+    | '/appointment'
+    | '/blog'
+    | '/contact'
+    | '/doctors'
+    | '/gallery'
+    | '/pricing'
+    | '/testimonials'
+    | '/treatments'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/appointment'
+    | '/blog'
+    | '/contact'
+    | '/doctors'
+    | '/gallery'
+    | '/pricing'
+    | '/testimonials'
+    | '/treatments'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AppointmentRoute: typeof AppointmentRoute
+  BlogRoute: typeof BlogRoute
+  ContactRoute: typeof ContactRoute
   DoctorsRoute: typeof DoctorsRoute
+  GalleryRoute: typeof GalleryRoute
+  PricingRoute: typeof PricingRoute
+  TestimonialsRoute: typeof TestimonialsRoute
   TreatmentsRoute: typeof TreatmentsRoute
 }
 
@@ -85,11 +176,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/appointment': {
+      id: '/appointment'
+      path: '/appointment'
+      fullPath: '/appointment'
+      preLoaderRoute: typeof AppointmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/doctors': {
       id: '/doctors'
       path: '/doctors'
       fullPath: '/doctors'
       preLoaderRoute: typeof DoctorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/testimonials': {
+      id: '/testimonials'
+      path: '/testimonials'
+      fullPath: '/testimonials'
+      preLoaderRoute: typeof TestimonialsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/treatments': {
@@ -105,7 +238,13 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AppointmentRoute: AppointmentRoute,
+  BlogRoute: BlogRoute,
+  ContactRoute: ContactRoute,
   DoctorsRoute: DoctorsRoute,
+  GalleryRoute: GalleryRoute,
+  PricingRoute: PricingRoute,
+  TestimonialsRoute: TestimonialsRoute,
   TreatmentsRoute: TreatmentsRoute,
 }
 export const routeTree = rootRouteImport
