@@ -77,23 +77,66 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "SmileCare Dental Hospital | Best Dental Clinic in Pune" },
+      {
+        name: "description",
+        content:
+          "SmileCare Dental Hospital, Pune — advanced painless dental care, implants, root canal, braces, teeth whitening and smile makeovers by 12 specialist dentists.",
+      },
+      { name: "author", content: "SmileCare Dental Hospital" },
+      {
+        name: "keywords",
+        content:
+          "dental clinic near me, best dentist Pune, dental hospital, dental implants, root canal treatment, teeth whitening, cosmetic dentist, orthodontist, braces treatment, emergency dentist, smile makeover, family dentist",
+      },
+      { property: "og:site_name", content: "SmileCare Dental Hospital" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "theme-color", content: "#0EA5E9" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&display=swap",
+      },
+      {
+        rel: "stylesheet",
+        href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css",
+      },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dentist",
+          name: "SmileCare Dental Hospital",
+          description:
+            "Advanced dental hospital in Pune offering implants, root canal, braces, aligners, cosmetic dentistry and emergency dental care.",
+          telephone: "+91 98765 43210",
+          email: "info@smilecaredental.com",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "101, Sunshine Plaza, MG Road",
+            addressLocality: "Pune",
+            addressRegion: "Maharashtra",
+            postalCode: "411001",
+            addressCountry: "IN",
+          },
+          openingHours: ["Mo-Sa 09:00-20:00"],
+          aggregateRating: { "@type": "AggregateRating", ratingValue: "4.9", reviewCount: "1840" },
+        }),
+      },
+    ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
