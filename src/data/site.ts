@@ -87,7 +87,7 @@ export const whyChooseUs = [
   { icon: "fa-solid fa-chart-line", title: "High Success Rate", desc: "98% clinical success across 25,000+ treated patients." },
 ];
 
-export const stats = [
+export const stats: { value: number; suffix: string; label: string; decimals?: number }[] = [
   { value: 15, suffix: "+", label: "Years Experience" },
   { value: 12, suffix: "+", label: "Specialist Doctors" },
   { value: 25000, suffix: "+", label: "Happy Patients" },
