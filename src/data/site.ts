@@ -44,7 +44,7 @@ export const navLinks = [
   { to: "/about", label: "About" },
   { to: "/treatments", label: "Treatments" },
   { to: "/doctors", label: "Doctors" },
-  { to: "/gallery", label: "Smile Gallery" },
+  { to: "/gallery", label: "Gallery" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/pricing", label: "Pricing" },
   { to: "/blog", label: "Blog" },
