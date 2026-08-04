@@ -159,12 +159,12 @@ function Header() {
           </ul>
 
           <div className="flex items-center gap-2">
-            <a
+            {/* <a
               href={`tel:${clinic.phone}`}
               className="hidden items-center gap-2 rounded-full border border-border px-4 py-2.5 text-sm font-semibold text-navy transition-colors hover:border-sky hover:text-sky md:flex"
             >
               <i className="fa-solid fa-phone-volume text-sky" /> {clinic.phone}
-            </a>
+            </a> */}
             <Link
               to="/appointment"
               className="hidden rounded-full bg-gradient-brand px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-card transition-transform hover:-translate-y-0.5 sm:block"
